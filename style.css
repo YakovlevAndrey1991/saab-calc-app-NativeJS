@@ -31,7 +31,7 @@ body {
     justify-content: space-around;
 }
 .level {
-    transition: 3s;
+    transition: 1s;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;
@@ -41,7 +41,7 @@ body {
 }
 .level:hover {
     cursor: pointer;
-    transition: 3s;
+    transition: 1s;
     background-color: green ;
 }
 .container:hover {
@@ -49,6 +49,7 @@ body {
 }
 
 .temperature {
+    transition: 1s;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;
@@ -58,7 +59,7 @@ body {
 }
 .temperature:hover {
     cursor: pointer;
-    transition: 3s;
+    transition: 1s;
     background-color: green ;
 }
 
@@ -71,6 +72,7 @@ body {
     margin-top: 20px;
 }
 .volume {
+    transition: 1s;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +81,7 @@ body {
     margin-top: 20px;
 }
 .weight {
+    transition: 1s;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;
@@ -142,27 +145,28 @@ body {
 
 
 .wrapper__auto__dens {
+    display: none;
+    transition: 1s;
     background-color: grey;
-    display: flex;
+
     flex-wrap: wrap;
     justify-content: center;
     margin-left: 50px;
     margin-top: 20px;
-    display: none;
 }
 .wrapper__auto__dens:hover {
     cursor: pointer;
-    transition: 2s;
+    transition: 1s;
     background-color: green ;
 }
 .volume:hover {
     cursor: pointer;
-    transition: 2s;
+    transition: 1s;
     background-color: green ;
 }
 .weight:hover {
     cursor: pointer;
-    transition: 2s;
+    transition: 1s;
     background-color: green ;
 }
 
@@ -175,6 +179,7 @@ body {
 }
 
 .chose__density_type {
+    transition: 1s;
     background-color: grey;
     display: flex;
     flex-wrap: wrap;
@@ -184,7 +189,7 @@ body {
 }
 .chose__density_type:hover {
     cursor: pointer;
-    transition: 2s;
+    transition: 1s;
     background-color: green ;
 }
 .choose {

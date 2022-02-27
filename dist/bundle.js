@@ -124,6 +124,28 @@ const inputTemp = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
 
 /***/ }),
 
+/***/ "./classes/inputClass/inputVolume.js":
+/*!*******************************************!*\
+  !*** ./classes/inputClass/inputVolume.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _inputClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inputClass */ "./classes/inputClass/inputClass.js");
+
+const inputVolume = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "Введите объем",
+    "currentVolume",
+    "",
+    ".volume .title",
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputVolume);
+
+/***/ }),
+
 /***/ "./classes/selectClass/selectClass.js":
 /*!********************************************!*\
   !*** ./classes/selectClass/selectClass.js ***!
@@ -243,6 +265,38 @@ const selectPressure = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
 
 /***/ }),
 
+/***/ "./classes/selectClass/selectTable.js":
+/*!********************************************!*\
+  !*** ./classes/selectClass/selectTable.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _selectClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./selectClass */ "./classes/selectClass/selectClass.js");
+
+const selectTable = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "Выберите погрешность таблицы",
+    "selectTableAcc",
+    "Выберите значение",
+    "Выбрать значение",
+    ".volume .title",
+    "0.05",
+    "0.1",
+    "0.2",
+    "0.05",
+    "0.1",
+    "0.2",
+    "",
+    "",
+    "",
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectTable);
+
+/***/ }),
+
 /***/ "./classes/selectClass/selectTemp.js":
 /*!*******************************************!*\
   !*** ./classes/selectClass/selectTemp.js ***!
@@ -288,17 +342,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ SpanClass)
 /* harmony export */ });
 class SpanClass {
-    constructor(title, divClass, parentSelector) {
+    constructor(title, divClass, parentSelector, cssClass) {
         this.title = title
         this.divClass = divClass
         this.parent = document.querySelector(parentSelector)
+        this.cssClass = cssClass
     }
 
     render() {
         const element = document.createElement('div')
 
         element.innerHTML = `
-        <div class="container show">
+        <div class="container show ${this.cssClass}">
             <p>${this.title}</p>
             <div class=${this.divClass}>
                 <span></span>
@@ -308,6 +363,72 @@ class SpanClass {
         this.parent.after(element)
     }
 }
+
+/***/ }),
+
+/***/ "./classes/spanClass/spanAbsDensityAcc.js":
+/*!************************************************!*\
+  !*** ./classes/spanClass/spanAbsDensityAcc.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SpanClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpanClass */ "./classes/spanClass/SpanClass.js");
+
+const spanAbsDensityAcc = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "&#916 плотности, кг/м3",
+    "span",
+    ".tempCorrection",
+    "absDensityAcc"
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanAbsDensityAcc);
+
+/***/ }),
+
+/***/ "./classes/spanClass/spanDensity.js":
+/*!******************************************!*\
+  !*** ./classes/spanClass/spanDensity.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SpanClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpanClass */ "./classes/spanClass/SpanClass.js");
+
+const spanDensity = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "Плотность продукта, кг/м3",
+    "span",
+    ".tempCorrection",
+    "resultAutoDensity"
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanDensity);
+
+/***/ }),
+
+/***/ "./classes/spanClass/spanDensityAcc.js":
+/*!*********************************************!*\
+  !*** ./classes/spanClass/spanDensityAcc.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SpanClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpanClass */ "./classes/spanClass/SpanClass.js");
+
+const spanDensityAcc = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "&#948 плотности, %",
+    "span",
+    ".tempCorrection",
+    "densityAcc",
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanDensityAcc);
 
 /***/ }),
 
@@ -348,6 +469,7 @@ const spanPressure = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 давления, %",
     "span",
     ".wrapper__auto__dens .title",
+    "pressure"
 
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanPressure);
@@ -372,6 +494,72 @@ const spanTemp = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     ".temperature .title"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanTemp);
+
+/***/ }),
+
+/***/ "./classes/spanClass/spanVolume.js":
+/*!*****************************************!*\
+  !*** ./classes/spanClass/spanVolume.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SpanClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpanClass */ "./classes/spanClass/SpanClass.js");
+
+const spanVolume = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "&#948 объема, %",
+    "span",
+    ".volume .title",
+    "volumeAcc",
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanVolume);
+
+/***/ }),
+
+/***/ "./classes/spanClass/spanWeight.js":
+/*!*****************************************!*\
+  !*** ./classes/spanClass/spanWeight.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SpanClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpanClass */ "./classes/spanClass/SpanClass.js");
+
+const spanWeight = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "Масса, тонн",
+    "span",
+    ".weight .title",
+    "currentWeight"
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanWeight);
+
+/***/ }),
+
+/***/ "./classes/spanClass/spanWeightAcc.js":
+/*!********************************************!*\
+  !*** ./classes/spanClass/spanWeightAcc.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SpanClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SpanClass */ "./classes/spanClass/SpanClass.js");
+
+const spanWeightAcc = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
+    "&#948 массы, %",
+    "span",
+    ".weight .title",
+    "weightAcc"
+).render()
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanWeightAcc);
 
 /***/ }),
 
@@ -482,8 +670,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _classes_spanClass_spanPressure__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../classes/spanClass/spanPressure */ "./classes/spanClass/spanPressure.js");
 /* harmony import */ var _classes_inputClass_inputPressure__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../classes/inputClass/inputPressure */ "./classes/inputClass/inputPressure.js");
 /* harmony import */ var _classes_inputClass_inputHeightPressure__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../classes/inputClass/inputHeightPressure */ "./classes/inputClass/inputHeightPressure.js");
-/* harmony import */ var _classes_selectClass_selectPressure__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../classes/selectClass/selectPressure */ "./classes/selectClass/selectPressure.js");
-/* harmony import */ var _modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/animation/showHideAnimation */ "./modules/animation/showHideAnimation.js");
+/* harmony import */ var _classes_spanClass_spanDensity__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../classes/spanClass/spanDensity */ "./classes/spanClass/spanDensity.js");
+/* harmony import */ var _classes_spanClass_spanDensityAcc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../classes/spanClass/spanDensityAcc */ "./classes/spanClass/spanDensityAcc.js");
+/* harmony import */ var _classes_selectClass_selectPressure__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../classes/selectClass/selectPressure */ "./classes/selectClass/selectPressure.js");
+/* harmony import */ var _classes_spanClass_spanAbsDensityAcc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../classes/spanClass/spanAbsDensityAcc */ "./classes/spanClass/spanAbsDensityAcc.js");
+/* harmony import */ var _classes_spanClass_spanVolume__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../classes/spanClass/spanVolume */ "./classes/spanClass/spanVolume.js");
+/* harmony import */ var _classes_inputClass_inputVolume__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../classes/inputClass/inputVolume */ "./classes/inputClass/inputVolume.js");
+/* harmony import */ var _classes_selectClass_selectTable__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../classes/selectClass/selectTable */ "./classes/selectClass/selectTable.js");
+/* harmony import */ var _classes_spanClass_spanWeightAcc__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../classes/spanClass/spanWeightAcc */ "./classes/spanClass/spanWeightAcc.js");
+/* harmony import */ var _classes_spanClass_spanWeight__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../classes/spanClass/spanWeight */ "./classes/spanClass/spanWeight.js");
+/* harmony import */ var _modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../modules/animation/showHideAnimation */ "./modules/animation/showHideAnimation.js");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -499,7 +704,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const resultLevel = document.querySelector('.level span')
 const resultTemp = document.querySelector('.temperature span')
-const resultPressure = document.querySelector('.wrapper__auto__dens span')
+const resultPressure = document.querySelector('.pressure span')
 const resultAutoDensityCalc = document.querySelector('.resultAutoDensity span')
 const resultDensityAcc = document.querySelector('.densityAcc span')
 const resultAutoAbsDensityAccCalc = document.querySelector('.absDensityAcc span')
@@ -675,6 +880,7 @@ function volumeAccCalc() {
     }
     if (!volume) {
         resultVolumeAcc.textContent = 'Объем не введен'
+        return
     }
 }
 
@@ -796,12 +1002,12 @@ getStaticInfo('#selectTemp')
 getStaticInfo('#selectPressure')
 getStaticInfo('#selectTableAcc')
 
-;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__["default"])('.level', '.level .container', 'level')
-;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__["default"])('.temperature', '.temperature .container', 'temperature')
-;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__["default"])('.chose__density_type', '.chose__density_type .container', 'chose__density_type')
-;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__["default"])('.wrapper__auto__dens', '.wrapper__auto__dens .container', 'wrapper__auto__dens')
-;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__["default"])('.volume', '.volume .container', 'volume')
-;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_10__["default"])('.weight', '.weight .container', 'weight')
+;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.level', '.level .container', 'level')
+;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.temperature', '.temperature .container', 'temperature')
+;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.chose__density_type', '.chose__density_type .container', 'chose__density_type')
+;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.wrapper__auto__dens', '.wrapper__auto__dens .container', 'wrapper__auto__dens')
+;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.volume', '.volume .container', 'volume')
+;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.weight', '.weight .container', 'weight')
 
 
 // newElement.innerHTML = `

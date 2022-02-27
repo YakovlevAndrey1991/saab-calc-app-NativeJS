@@ -7,13 +7,22 @@ import selectTemp from "../classes/selectClass/selectTemp";
 import spanPressure from "../classes/spanClass/spanPressure";
 import inputPressure from "../classes/inputClass/inputPressure";
 import inputHeightPressure from "../classes/inputClass/inputHeightPressure";
+import spanDensity from "../classes/spanClass/spanDensity";
+import spanDensityAcc from "../classes/spanClass/spanDensityAcc";
 import selectPressure from "../classes/selectClass/selectPressure";
+import spanAbsDensityAcc from "../classes/spanClass/spanAbsDensityAcc";
+import spanVolume from "../classes/spanClass/spanVolume";
+import inputVolume from "../classes/inputClass/inputVolume";
+import selectTable from "../classes/selectClass/selectTable";
+import spanWeightAcc from "../classes/spanClass/spanWeightAcc";
+import spanWeight from "../classes/spanClass/spanWeight";
+
 
 import showHideAnimation from "../modules/animation/showHideAnimation";
 
 const resultLevel = document.querySelector('.level span')
 const resultTemp = document.querySelector('.temperature span')
-const resultPressure = document.querySelector('.wrapper__auto__dens span')
+const resultPressure = document.querySelector('.pressure span')
 const resultAutoDensityCalc = document.querySelector('.resultAutoDensity span')
 const resultDensityAcc = document.querySelector('.densityAcc span')
 const resultAutoAbsDensityAccCalc = document.querySelector('.absDensityAcc span')
@@ -189,6 +198,7 @@ function volumeAccCalc() {
     }
     if (!volume) {
         resultVolumeAcc.textContent = 'Объем не введен'
+        return
     }
 }
 
