@@ -1,10 +1,19 @@
+import spanLevel from "../classes/spanClass/spanLevel";
+import inputLevel from "../classes/inputClass/inputLevel";
 import selectLevel from "../classes/selectClass/selectLevel";
+import spanTemp from "../classes/spanClass/spanTemp";
+import inputTemp from "../classes/inputClass/inputTemp";
 import selectTemp from "../classes/selectClass/selectTemp";
+import spanPressure from "../classes/spanClass/spanPressure";
+import inputPressure from "../classes/inputClass/inputPressure";
+import inputHeightPressure from "../classes/inputClass/inputHeightPressure";
+import selectPressure from "../classes/selectClass/selectPressure";
+
 import showHideAnimation from "../modules/animation/showHideAnimation";
 
 const resultLevel = document.querySelector('.level span')
 const resultTemp = document.querySelector('.temperature span')
-const resultPressure = document.querySelector('.pressure span')
+const resultPressure = document.querySelector('.wrapper__auto__dens span')
 const resultAutoDensityCalc = document.querySelector('.resultAutoDensity span')
 const resultDensityAcc = document.querySelector('.densityAcc span')
 const resultAutoAbsDensityAccCalc = document.querySelector('.absDensityAcc span')
@@ -61,6 +70,9 @@ function tempCalc() {
     }
     if (tempTransmitter === '0.25') {
         resultTemp.textContent = ((0.25 * 100) / temp).toFixed(4)
+    }
+    if (tempTransmitter === '0.15') {
+        resultTemp.textContent = ((0.15 * 100) / temp).toFixed(4)
     }
     if (!temp) {
         resultTemp.textContent = 'Значение температуры не введено!'

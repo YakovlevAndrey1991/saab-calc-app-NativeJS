@@ -126,6 +126,8 @@ body {
     box-sizing: border-box;
     margin-left: 20px;
     background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .span {
@@ -191,5 +193,9 @@ body {
     border-style: solid;
     box-sizing: border-box;
     margin-left: 20px;
+    background-color: white;
+}
+
+navbar {
     background-color: white;
 }

@@ -7,8 +7,13 @@ const selectTemp= new SelectWindow(
     '.temperature .title',
     "0.5",
     "0.25",
+    "0.15",
     "2240S",
     "NLI/WLS",
+    "Rosemount 565",
+    "Rosemount 644",
+    "Rosemount 765",
+    "Rosemount 766"
 
 
 ).render()
