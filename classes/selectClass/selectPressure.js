@@ -4,7 +4,7 @@ const selectPressure = new SelectWindow(
     "selectPressure",
     "0",
     "Выберите датчик",
-    ".wrapper__auto__dens .title",
+    ".wrapper-pressure-content",
     "UFF",
     "U",
     "C",

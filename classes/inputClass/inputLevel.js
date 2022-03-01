@@ -3,6 +3,6 @@ const inputLevel = new InputWindow(
     "Введите значение уровня",
     "currentLevel",
     "",
-    ".level .title"
+    ".wrapper-level-content"
 ).render()
 export default inputLevel;

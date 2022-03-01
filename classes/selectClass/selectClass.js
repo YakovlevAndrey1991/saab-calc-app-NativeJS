@@ -20,7 +20,7 @@ export default class SelectWindow {
         const element = document.createElement('div');
 
         element.innerHTML = `
-               <div class="container show">
+               <div class="container hide">
             <div class="content">
                 <p>${this.title}</p>
             </div>
@@ -37,6 +37,6 @@ export default class SelectWindow {
             </div>
         </div>
        `
-        this.parent.after(element)
+        this.parent.append(element)
     }
 }

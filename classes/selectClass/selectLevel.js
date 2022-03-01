@@ -4,7 +4,7 @@ const selectLevel = new SelectWindow(
     "selectLevel",
     "Выберите уровнемер",
     "Выберите уровнемер",
-    ".level .title",
+    ".wrapper-level-content",
     "1",
     "2",
     "3",

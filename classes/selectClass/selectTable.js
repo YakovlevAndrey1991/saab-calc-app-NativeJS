@@ -4,7 +4,7 @@ const selectTable = new SelectWindow(
     "selectTableAcc",
     "Выберите значение",
     "Выбрать значение",
-    ".volume .title",
+    ".wrapper-volume-content",
     "0.05",
     "0.1",
     "0.2",

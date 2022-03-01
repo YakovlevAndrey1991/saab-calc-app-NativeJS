@@ -3,6 +3,6 @@ const inputHeightPressure = new InputWindow(
     "Высота установки датчика давления",
     "heightPressureTransmitter",
 "500",
-    ".wrapper__auto__dens .title"
+    ".wrapper-pressure-content"
 ).render()
 export default inputHeightPressure

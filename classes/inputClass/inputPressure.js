@@ -3,6 +3,6 @@ const inputPressure = new InputWindow(
     "Давление в Па",
     "currentPressure",
     "",
-    ".wrapper__auto__dens .title"
+    ".wrapper-pressure-content"
 ).render()
 export default inputPressure

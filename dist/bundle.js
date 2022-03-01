@@ -25,12 +25,12 @@ class InputWindow {
         const element = document.createElement('div')
 
         element.innerHTML = `
-         <div class="container show">
+         <div class="container hide">
             <p>${this.title}</p>
             <input id="${this.inputID}" value="${this.value}" type="number" placeholder="Введите значение" class="input">
         </div>
         `
-        this.parent.after(element)
+        this.parent.append(element)
     }
 }
 
@@ -52,7 +52,7 @@ const inputHeightPressure = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["defaul
     "Высота установки датчика давления",
     "heightPressureTransmitter",
 "500",
-    ".wrapper__auto__dens .title"
+    ".wrapper-pressure-content"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputHeightPressure);
 
@@ -74,7 +74,7 @@ const inputLevel = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "Введите значение уровня",
     "currentLevel",
     "",
-    ".level .title"
+    ".wrapper-level-content"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputLevel);
 
@@ -96,7 +96,7 @@ const inputPressure = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "Давление в Па",
     "currentPressure",
     "",
-    ".wrapper__auto__dens .title"
+    ".wrapper-pressure-content"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputPressure);
 
@@ -118,7 +118,7 @@ const inputTemp = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "Значение температуры в грудасах Цельсия",
     "currentTemp",
     "",
-    ".temperature .title"
+    ".wrapper-temp-content"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputTemp);
 
@@ -140,7 +140,7 @@ const inputVolume = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "Введите объем",
     "currentVolume",
     "",
-    ".volume .title",
+    ".wrapper-volume-content",
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputVolume);
 
@@ -178,7 +178,7 @@ class SelectWindow {
         const element = document.createElement('div');
 
         element.innerHTML = `
-               <div class="container show">
+               <div class="container hide">
             <div class="content">
                 <p>${this.title}</p>
             </div>
@@ -195,7 +195,7 @@ class SelectWindow {
             </div>
         </div>
        `
-        this.parent.after(element)
+        this.parent.append(element)
     }
 }
 
@@ -218,7 +218,7 @@ const selectLevel = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "selectLevel",
     "Выберите уровнемер",
     "Выберите уровнемер",
-    ".level .title",
+    ".wrapper-level-content",
     "1",
     "2",
     "3",
@@ -250,7 +250,7 @@ const selectPressure = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "selectPressure",
     "0",
     "Выберите датчик",
-    ".wrapper__auto__dens .title",
+    ".wrapper-pressure-content",
     "UFF",
     "U",
     "C",
@@ -282,7 +282,7 @@ const selectTable = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "selectTableAcc",
     "Выберите значение",
     "Выбрать значение",
-    ".volume .title",
+    ".wrapper-volume-content",
     "0.05",
     "0.1",
     "0.2",
@@ -314,7 +314,7 @@ const selectTemp= new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "selectTemp",
     "Выберите датчик",
     "Выберите датчик",
-    '.temperature .title',
+    '.wrapper-temp-content',
     "0.5",
     "0.25",
     "0.15",
@@ -353,14 +353,14 @@ class SpanClass {
         const element = document.createElement('div')
 
         element.innerHTML = `
-        <div class="container show ${this.cssClass}">
+        <div class="container hide ${this.cssClass}">
             <p>${this.title}</p>
             <div class=${this.divClass}>
                 <span></span>
             </div>
         </div>
         `
-        this.parent.after(element)
+        this.parent.append(element)
     }
 }
 
@@ -381,7 +381,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanAbsDensityAcc = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#916 плотности, кг/м3",
     "span",
-    ".tempCorrection",
+    ".wrapper-pressure-content",
     "absDensityAcc"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanAbsDensityAcc);
@@ -403,7 +403,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanDensity = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "Плотность продукта, кг/м3",
     "span",
-    ".tempCorrection",
+    ".wrapper-pressure-content",
     "resultAutoDensity"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanDensity);
@@ -425,7 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanDensityAcc = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 плотности, %",
     "span",
-    ".tempCorrection",
+    ".wrapper-pressure-content",
     "densityAcc",
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanDensityAcc);
@@ -447,7 +447,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanLevel = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 уровня, %",
     "span__result__level",
-    ".level .title"
+    ".wrapper-level-content"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanLevel);
 
@@ -468,7 +468,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanPressure = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 давления, %",
     "span",
-    ".wrapper__auto__dens .title",
+    ".wrapper-pressure-content",
     "pressure"
 
 ).render()
@@ -491,7 +491,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanTemp = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 температуры, %",
     "span",
-    ".temperature .title"
+    ".wrapper-temp-content"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanTemp);
 
@@ -512,7 +512,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanVolume = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 объема, %",
     "span",
-    ".volume .title",
+    ".wrapper-volume-content",
     "volumeAcc",
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanVolume);
@@ -534,7 +534,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanWeight = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "Масса, тонн",
     "span",
-    ".weight .title",
+    ".wrapper-weight-content",
     "currentWeight"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanWeight);
@@ -556,7 +556,7 @@ __webpack_require__.r(__webpack_exports__);
 const spanWeightAcc = new _SpanClass__WEBPACK_IMPORTED_MODULE_0__["default"](
     "&#948 массы, %",
     "span",
-    ".weight .title",
+    ".wrapper-weight-content",
     "weightAcc"
 ).render()
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spanWeightAcc);
@@ -573,14 +573,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ showHideAnimation)
 /* harmony export */ });
-function showHideAnimation(parentElementSelector, contentSelector, parentElementClassName) {
+// export default function showHideAnimation(parentElementSelector, contentSelector, parentElementClassName) {
+//     const element = document.querySelector(parentElementSelector)
+//     const content = document.querySelectorAll(contentSelector)
+//
+//     element.addEventListener('click', (e) => {
+//
+//         const target = e.target
+//         if (target.classList.contains(parentElementClassName) || target.classList.contains('title') || target.parentElement.classList.contains('title') || target.parentElement.classList.contains(parentElementClassName)) {
+//             content.forEach(elem => {
+//                 if (elem.classList.contains('hide')){
+//                     elem.classList.remove('hide')
+//                     elem.classList.add('show')
+//                     elem.style.cssText = 'height: 150px'
+//                 } else {
+//                     elem.classList.remove('show')
+//                     elem.classList.add('hide')
+//                     elem.style.cssText = 'height: 50px'
+//                 }
+//
+//             })
+//         }})
+// }
+
+function showHideAnimation(parentElementSelector, contentSelector) {
     const element = document.querySelector(parentElementSelector)
     const content = document.querySelectorAll(contentSelector)
 
     element.addEventListener('click', (e) => {
 
         const target = e.target
-        if (target.classList.contains(parentElementClassName) || target.classList.contains('title') || target.parentElement.classList.contains('title') || target.parentElement.classList.contains(parentElementClassName)) {
+        if (target.parentElement.classList.contains('title')) {
             content.forEach(elem => {
                 if (elem.classList.contains('hide')){
                     elem.classList.remove('hide')
@@ -589,7 +612,7 @@ function showHideAnimation(parentElementSelector, contentSelector, parentElement
                 } else {
                     elem.classList.remove('show')
                     elem.classList.add('hide')
-                    elem.style.cssText = 'height: 50px'
+                    elem.style.cssText = 'height: 25px'
                 }
 
             })
@@ -661,25 +684,31 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _classes_spanClass_spanLevel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/spanClass/spanLevel */ "./classes/spanClass/spanLevel.js");
+/* harmony import */ var _classes_selectClass_selectLevel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/selectClass/selectLevel */ "./classes/selectClass/selectLevel.js");
 /* harmony import */ var _classes_inputClass_inputLevel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../classes/inputClass/inputLevel */ "./classes/inputClass/inputLevel.js");
-/* harmony import */ var _classes_selectClass_selectLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../classes/selectClass/selectLevel */ "./classes/selectClass/selectLevel.js");
-/* harmony import */ var _classes_spanClass_spanTemp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../classes/spanClass/spanTemp */ "./classes/spanClass/spanTemp.js");
+/* harmony import */ var _classes_spanClass_spanLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../classes/spanClass/spanLevel */ "./classes/spanClass/spanLevel.js");
+/* harmony import */ var _classes_selectClass_selectTemp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../classes/selectClass/selectTemp */ "./classes/selectClass/selectTemp.js");
 /* harmony import */ var _classes_inputClass_inputTemp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../classes/inputClass/inputTemp */ "./classes/inputClass/inputTemp.js");
-/* harmony import */ var _classes_selectClass_selectTemp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../classes/selectClass/selectTemp */ "./classes/selectClass/selectTemp.js");
-/* harmony import */ var _classes_spanClass_spanPressure__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../classes/spanClass/spanPressure */ "./classes/spanClass/spanPressure.js");
+/* harmony import */ var _classes_spanClass_spanTemp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../classes/spanClass/spanTemp */ "./classes/spanClass/spanTemp.js");
+/* harmony import */ var _classes_selectClass_selectPressure__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../classes/selectClass/selectPressure */ "./classes/selectClass/selectPressure.js");
 /* harmony import */ var _classes_inputClass_inputPressure__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../classes/inputClass/inputPressure */ "./classes/inputClass/inputPressure.js");
-/* harmony import */ var _classes_inputClass_inputHeightPressure__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../classes/inputClass/inputHeightPressure */ "./classes/inputClass/inputHeightPressure.js");
+/* harmony import */ var _classes_spanClass_spanPressure__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../classes/spanClass/spanPressure */ "./classes/spanClass/spanPressure.js");
 /* harmony import */ var _classes_spanClass_spanDensity__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../classes/spanClass/spanDensity */ "./classes/spanClass/spanDensity.js");
-/* harmony import */ var _classes_spanClass_spanDensityAcc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../classes/spanClass/spanDensityAcc */ "./classes/spanClass/spanDensityAcc.js");
-/* harmony import */ var _classes_selectClass_selectPressure__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../classes/selectClass/selectPressure */ "./classes/selectClass/selectPressure.js");
+/* harmony import */ var _classes_inputClass_inputHeightPressure__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../classes/inputClass/inputHeightPressure */ "./classes/inputClass/inputHeightPressure.js");
+/* harmony import */ var _classes_spanClass_spanDensityAcc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../classes/spanClass/spanDensityAcc */ "./classes/spanClass/spanDensityAcc.js");
 /* harmony import */ var _classes_spanClass_spanAbsDensityAcc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../classes/spanClass/spanAbsDensityAcc */ "./classes/spanClass/spanAbsDensityAcc.js");
-/* harmony import */ var _classes_spanClass_spanVolume__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../classes/spanClass/spanVolume */ "./classes/spanClass/spanVolume.js");
+/* harmony import */ var _classes_selectClass_selectTable__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../classes/selectClass/selectTable */ "./classes/selectClass/selectTable.js");
 /* harmony import */ var _classes_inputClass_inputVolume__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../classes/inputClass/inputVolume */ "./classes/inputClass/inputVolume.js");
-/* harmony import */ var _classes_selectClass_selectTable__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../classes/selectClass/selectTable */ "./classes/selectClass/selectTable.js");
-/* harmony import */ var _classes_spanClass_spanWeightAcc__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../classes/spanClass/spanWeightAcc */ "./classes/spanClass/spanWeightAcc.js");
-/* harmony import */ var _classes_spanClass_spanWeight__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../classes/spanClass/spanWeight */ "./classes/spanClass/spanWeight.js");
+/* harmony import */ var _classes_spanClass_spanVolume__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../classes/spanClass/spanVolume */ "./classes/spanClass/spanVolume.js");
+/* harmony import */ var _classes_spanClass_spanWeight__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../classes/spanClass/spanWeight */ "./classes/spanClass/spanWeight.js");
+/* harmony import */ var _classes_spanClass_spanWeightAcc__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../classes/spanClass/spanWeightAcc */ "./classes/spanClass/spanWeightAcc.js");
 /* harmony import */ var _modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../modules/animation/showHideAnimation */ "./modules/animation/showHideAnimation.js");
+
+
+
+
+
+
 
 
 

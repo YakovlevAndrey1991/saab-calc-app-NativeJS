@@ -3,6 +3,6 @@ const inputTemp = new InputWindow(
     "Значение температуры в грудасах Цельсия",
     "currentTemp",
     "",
-    ".temperature .title"
+    ".wrapper-temp-content"
 ).render()
 export default inputTemp

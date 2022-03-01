@@ -2,7 +2,7 @@ import SpanClass from "./SpanClass";
 const spanDensityAcc = new SpanClass(
     "&#948 плотности, %",
     "span",
-    ".tempCorrection",
+    ".wrapper-pressure-content",
     "densityAcc",
 ).render()
 export default spanDensityAcc

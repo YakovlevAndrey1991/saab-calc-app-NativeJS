@@ -11,11 +11,11 @@ export default class InputWindow {
         const element = document.createElement('div')
 
         element.innerHTML = `
-         <div class="container show">
+         <div class="container hide">
             <p>${this.title}</p>
             <input id="${this.inputID}" value="${this.value}" type="number" placeholder="Введите значение" class="input">
         </div>
         `
-        this.parent.after(element)
+        this.parent.append(element)
     }
 }

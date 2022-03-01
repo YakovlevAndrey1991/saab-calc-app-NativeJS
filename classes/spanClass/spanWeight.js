@@ -2,7 +2,7 @@ import SpanClass from "./SpanClass";
 const spanWeight = new SpanClass(
     "Масса, тонн",
     "span",
-    ".weight .title",
+    ".wrapper-weight-content",
     "currentWeight"
 ).render()
 export default spanWeight

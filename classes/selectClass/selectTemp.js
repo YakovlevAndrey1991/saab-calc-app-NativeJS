@@ -4,7 +4,7 @@ const selectTemp= new SelectWindow(
     "selectTemp",
     "Выберите датчик",
     "Выберите датчик",
-    '.temperature .title',
+    '.wrapper-temp-content',
     "0.5",
     "0.25",
     "0.15",

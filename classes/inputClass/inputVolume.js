@@ -3,6 +3,6 @@ const inputVolume = new InputWindow(
     "Введите объем",
     "currentVolume",
     "",
-    ".volume .title",
+    ".wrapper-volume-content",
 ).render()
 export default inputVolume

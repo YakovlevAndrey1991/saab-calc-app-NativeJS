@@ -2,7 +2,7 @@ import SpanClass from "./SpanClass";
 const spanVolume = new SpanClass(
     "&#948 объема, %",
     "span",
-    ".volume .title",
+    ".wrapper-volume-content",
     "volumeAcc",
 ).render()
 export default spanVolume
