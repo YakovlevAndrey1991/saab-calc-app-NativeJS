@@ -1,0 +1,68 @@
+{
+  "level": [
+    {
+      "title": "5900S",
+      "value": 1
+    },
+    {
+      "title": "5900C",
+      "value": 2
+    },
+    {
+      "title": "REX",
+      "value": 1
+    },
+    {
+      "title": "5300",
+      "value": 3
+    },
+    {
+      "title": "5400",
+      "value": 3
+    },
+    {
+      "title": "PRO",
+      "value": 3
+    }
+  ],
+  "temperature": [
+    {
+      "title": "2240S",
+      "value": 0.5
+    },
+    {
+      "title": "NLI",
+      "value": 0.25
+    }
+  ],
+  "volume": [
+    {
+      "title": "0.05",
+      "value": 0.05
+    },
+    {
+      "title": "0.1",
+      "value": 0.1
+    },
+    {
+      "title": "0.2",
+      "value": 0.2
+    }
+  ],
+  "pressure": [
+    {
+      "title": "3051S Ultra for Flow",
+      "value": "UFF"
+    },
+    {
+      "title": "3051S Ultra",
+      "value": "U"
+    },
+    {
+      "title": "3051S Classic",
+      "value": "C"
+    }
+  ],
+  "requests": [
+  ]
+}

@@ -10,7 +10,7 @@ export default class SpanClass {
         const element = document.createElement('div')
 
         element.innerHTML = `
-        <div class="container hide ${this.cssClass}">
+        <div class="container ${this.cssClass}">
             <p>${this.title}</p>
             <div class=${this.divClass}>
                 <span></span>

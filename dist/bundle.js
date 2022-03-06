@@ -2,6 +2,230 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./classes/CreateSelect/CreateOptions.js":
+/*!***********************************************!*\
+  !*** ./classes/CreateSelect/CreateOptions.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class AddOption {
+    constructor(title, value, parentID) {
+        this.title = title
+        this.value = value
+        this.parent = document.querySelector(parentID)
+    }
+
+    render() {
+        const option = document.createElement('option')
+        option.innerHTML = `${this.title}`
+        option.value = this.value
+
+        this.parent.append(option)
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AddOption);
+
+/***/ }),
+
+/***/ "./classes/CreateSelect/CreateSelect.js":
+/*!**********************************************!*\
+  !*** ./classes/CreateSelect/CreateSelect.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class CreateSelect {
+    constructor(id, parent) {
+        this.id = id
+        this.parent = document.querySelector(parent)
+    }
+
+    render() {
+        const select = document.createElement('select')
+        select.classList.add('select')
+        select.id = this.id
+        select.innerHTML = `<option value="Выберите датчик">Выберите датчик</option>`
+        this.parent.append(select)
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateSelect);
+
+/***/ }),
+
+/***/ "./classes/CreateSelect/CreateSelectWindow.js":
+/*!****************************************************!*\
+  !*** ./classes/CreateSelect/CreateSelectWindow.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class CreateSelectWindow {
+    constructor(title, rootClass, parentSelector) {
+        this.title = title
+        this.rootClass = rootClass
+        this.parentSelector = document.querySelector(parentSelector)
+    }
+
+    render() {
+        const windowContent = document.createElement('div')
+        windowContent.classList.add('container', 'show')
+        windowContent.innerHTML = `
+        <div class="content"><p>${this.title}</p></div>
+        <div class="content ${this.rootClass}"></div>
+        `
+        this.parentSelector.append(windowContent)
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateSelectWindow);
+
+/***/ }),
+
+/***/ "./classes/Selects/Level.js":
+/*!**********************************!*\
+  !*** ./classes/Selects/Level.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CreateSelect/CreateSelectWindow */ "./classes/CreateSelect/CreateSelectWindow.js");
+/* harmony import */ var _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CreateSelect/CreateSelect */ "./classes/CreateSelect/CreateSelect.js");
+/* harmony import */ var _utilites_getResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilites/getResource */ "./utilites/getResource.js");
+
+
+
+
+
+const levelSelectWindow = new _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__["default"](
+    'Выберите уровнемер',
+    'selectLevelWindow',
+    '.wrapper-level-content'
+).render()
+
+const selectLevel = new _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__["default"](
+    'selectLevel',
+    '.selectLevelWindow'
+).render()
+
+;(0,_utilites_getResource__WEBPACK_IMPORTED_MODULE_2__["default"])('http://localhost:3000/level', '#selectLevel')
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (levelSelectWindow);
+
+/***/ }),
+
+/***/ "./classes/Selects/Pressure.js":
+/*!*************************************!*\
+  !*** ./classes/Selects/Pressure.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CreateSelect/CreateSelectWindow */ "./classes/CreateSelect/CreateSelectWindow.js");
+/* harmony import */ var _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CreateSelect/CreateSelect */ "./classes/CreateSelect/CreateSelect.js");
+/* harmony import */ var _utilites_getResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilites/getResource */ "./utilites/getResource.js");
+
+
+
+
+const pressureSelectWindow = new _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__["default"](
+    'Выберите датчик',
+    'selectPressureWindow',
+    '.wrapper-pressure-content'
+).render()
+
+const selectPressure = new _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__["default"](
+    'selectPressure',
+    '.selectPressureWindow'
+).render()
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pressureSelectWindow);
+(0,_utilites_getResource__WEBPACK_IMPORTED_MODULE_2__["default"])('http://localhost:3000/pressure', '#selectPressure')
+
+/***/ }),
+
+/***/ "./classes/Selects/Temperature.js":
+/*!****************************************!*\
+  !*** ./classes/Selects/Temperature.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CreateSelect/CreateSelectWindow */ "./classes/CreateSelect/CreateSelectWindow.js");
+/* harmony import */ var _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CreateSelect/CreateSelect */ "./classes/CreateSelect/CreateSelect.js");
+/* harmony import */ var _utilites_getResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilites/getResource */ "./utilites/getResource.js");
+
+
+
+
+const tempSelectWindow = new _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__["default"](
+    'Выберите датчик',
+    'selectTempWindow',
+    '.wrapper-temp-content'
+).render()
+
+const selectTemp = new _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__["default"](
+    'selectTemp',
+    '.selectTempWindow'
+).render()
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tempSelectWindow);
+(0,_utilites_getResource__WEBPACK_IMPORTED_MODULE_2__["default"])('http://localhost:3000/temperature', '#selectTemp')
+
+/***/ }),
+
+/***/ "./classes/Selects/Volume.js":
+/*!***********************************!*\
+  !*** ./classes/Selects/Volume.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CreateSelect/CreateSelectWindow */ "./classes/CreateSelect/CreateSelectWindow.js");
+/* harmony import */ var _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CreateSelect/CreateSelect */ "./classes/CreateSelect/CreateSelect.js");
+/* harmony import */ var _utilites_getResource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilites/getResource */ "./utilites/getResource.js");
+
+
+
+
+
+const volumeSelectWindow = new _CreateSelect_CreateSelectWindow__WEBPACK_IMPORTED_MODULE_0__["default"](
+    'Выберите значение',
+    'selectVolumeWindow',
+    '.wrapper-volume-content'
+).render()
+
+const selectLevel = new _CreateSelect_CreateSelect__WEBPACK_IMPORTED_MODULE_1__["default"](
+    'selectTableAcc',
+    '.selectVolumeWindow'
+).render()
+
+;(0,_utilites_getResource__WEBPACK_IMPORTED_MODULE_2__["default"])('http://localhost:3000/volume', '#selectTableAcc')
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (volumeSelectWindow);
+
+/***/ }),
+
 /***/ "./classes/inputClass/inputClass.js":
 /*!******************************************!*\
   !*** ./classes/inputClass/inputClass.js ***!
@@ -25,7 +249,7 @@ class InputWindow {
         const element = document.createElement('div')
 
         element.innerHTML = `
-         <div class="container hide">
+         <div class="container">
             <p>${this.title}</p>
             <input id="${this.inputID}" value="${this.value}" type="number" placeholder="Введите значение" class="input">
         </div>
@@ -146,191 +370,6 @@ const inputVolume = new _inputClass__WEBPACK_IMPORTED_MODULE_0__["default"](
 
 /***/ }),
 
-/***/ "./classes/selectClass/selectClass.js":
-/*!********************************************!*\
-  !*** ./classes/selectClass/selectClass.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ SelectWindow)
-/* harmony export */ });
-class SelectWindow {
-    constructor(title, selectID, selectedValue, selectedValueTitle, parentSelector, value1, value2,value3, titleValue1, titleValue2, titleValue3, titleValue4, titleValue5,titleValue6) {
-        this.title = title
-        this.selectID = selectID
-        this.parent = document.querySelector(parentSelector)
-        this.selectedValue = selectedValue
-        this.selectedValueTitle = selectedValueTitle
-        this.value1 = value1
-        this.value2 = value2
-        this.value3 = value3
-        this.titleValue1 = titleValue1
-        this.titleValue2 = titleValue2
-        this.titleValue3 = titleValue3
-        this.titleValue4 = titleValue4
-        this.titleValue5 = titleValue5
-        this.titleValue6 = titleValue6
-    }
-
-    render() {
-        const element = document.createElement('div');
-
-        element.innerHTML = `
-               <div class="container hide">
-            <div class="content">
-                <p>${this.title}</p>
-            </div>
-            <div class="content">
-                <select class="select" id="${this.selectID}">
-                    <option selected value="${this.selectedValue}">${this.selectedValueTitle}</option>
-                    <option value="${this.value1}">${this.titleValue1}</option>
-                    <option value="${this.value2}">${this.titleValue2}</option>
-                    <option value="${this.value3}">${this.titleValue3}</option>
-                    <option value="${this.value3}">${this.titleValue4}</option>
-                    <option value="${this.value3}">${this.titleValue5}</option>
-                    <option value="${this.value3}">${this.titleValue6}</option>
-                </select>
-            </div>
-        </div>
-       `
-        this.parent.append(element)
-    }
-}
-
-/***/ }),
-
-/***/ "./classes/selectClass/selectLevel.js":
-/*!********************************************!*\
-  !*** ./classes/selectClass/selectLevel.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _selectClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./selectClass */ "./classes/selectClass/selectClass.js");
-
-const selectLevel = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
-    "Выберите уровнемер",
-    "selectLevel",
-    "Выберите уровнемер",
-    "Выберите уровнемер",
-    ".wrapper-level-content",
-    "1",
-    "2",
-    "3",
-    "5900S",
-    "5900C",
-    "REX",
-    "PRO",
-    "5300",
-    "5400",
-).render()
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectLevel);
-
-/***/ }),
-
-/***/ "./classes/selectClass/selectPressure.js":
-/*!***********************************************!*\
-  !*** ./classes/selectClass/selectPressure.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _selectClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./selectClass */ "./classes/selectClass/selectClass.js");
-
-const selectPressure = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
-    "Выберите датчик",
-    "selectPressure",
-    "0",
-    "Выберите датчик",
-    ".wrapper-pressure-content",
-    "UFF",
-    "U",
-    "C",
-    "3051S Ultra for flow",
-    "3051S Ultra",
-    "3051S Classic",
-    "2051T",
-    "3051",
-    "3051SAL"
-).render()
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectPressure);
-
-/***/ }),
-
-/***/ "./classes/selectClass/selectTable.js":
-/*!********************************************!*\
-  !*** ./classes/selectClass/selectTable.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _selectClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./selectClass */ "./classes/selectClass/selectClass.js");
-
-const selectTable = new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
-    "Выберите погрешность таблицы",
-    "selectTableAcc",
-    "Выберите значение",
-    "Выбрать значение",
-    ".wrapper-volume-content",
-    "0.05",
-    "0.1",
-    "0.2",
-    "0.05",
-    "0.1",
-    "0.2",
-    "",
-    "",
-    "",
-).render()
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectTable);
-
-/***/ }),
-
-/***/ "./classes/selectClass/selectTemp.js":
-/*!*******************************************!*\
-  !*** ./classes/selectClass/selectTemp.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _selectClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./selectClass */ "./classes/selectClass/selectClass.js");
-
-const selectTemp= new _selectClass__WEBPACK_IMPORTED_MODULE_0__["default"](
-    "Выберите датчик",
-    "selectTemp",
-    "Выберите датчик",
-    "Выберите датчик",
-    '.wrapper-temp-content',
-    "0.5",
-    "0.25",
-    "0.15",
-    "2240S",
-    "NLI/WLS",
-    "Rosemount 565",
-    "Rosemount 644",
-    "Rosemount 765",
-    "Rosemount 766"
-
-
-).render()
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (selectTemp);
-
-/***/ }),
-
 /***/ "./classes/spanClass/SpanClass.js":
 /*!****************************************!*\
   !*** ./classes/spanClass/SpanClass.js ***!
@@ -353,7 +392,7 @@ class SpanClass {
         const element = document.createElement('div')
 
         element.innerHTML = `
-        <div class="container hide ${this.cssClass}">
+        <div class="container ${this.cssClass}">
             <p>${this.title}</p>
             <div class=${this.divClass}>
                 <span></span>
@@ -619,6 +658,36 @@ function showHideAnimation(parentElementSelector, contentSelector) {
         }})
 }
 
+/***/ }),
+
+/***/ "./utilites/getResource.js":
+/*!*********************************!*\
+  !*** ./utilites/getResource.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _classes_CreateSelect_CreateOptions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/CreateSelect/CreateOptions */ "./classes/CreateSelect/CreateOptions.js");
+
+
+const getResource = async (url, parentID) => {
+    const res = await fetch(url)
+    if (!res.ok) {
+        throw new Error(`Could not fetch${url}, status: ${res.status}`)
+    }
+    return await res.json()
+        .then(data => {
+            console.log(data)
+            data.forEach(({title, value}) => {
+                new _classes_CreateSelect_CreateOptions__WEBPACK_IMPORTED_MODULE_0__["default"](title, value, parentID).render()
+            })
+        })
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getResource);
+
 /***/ })
 
 /******/ 	});
@@ -684,25 +753,28 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _classes_selectClass_selectLevel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/selectClass/selectLevel */ "./classes/selectClass/selectLevel.js");
-/* harmony import */ var _classes_inputClass_inputLevel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../classes/inputClass/inputLevel */ "./classes/inputClass/inputLevel.js");
-/* harmony import */ var _classes_spanClass_spanLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../classes/spanClass/spanLevel */ "./classes/spanClass/spanLevel.js");
-/* harmony import */ var _classes_selectClass_selectTemp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../classes/selectClass/selectTemp */ "./classes/selectClass/selectTemp.js");
-/* harmony import */ var _classes_inputClass_inputTemp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../classes/inputClass/inputTemp */ "./classes/inputClass/inputTemp.js");
-/* harmony import */ var _classes_spanClass_spanTemp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../classes/spanClass/spanTemp */ "./classes/spanClass/spanTemp.js");
-/* harmony import */ var _classes_selectClass_selectPressure__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../classes/selectClass/selectPressure */ "./classes/selectClass/selectPressure.js");
-/* harmony import */ var _classes_inputClass_inputPressure__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../classes/inputClass/inputPressure */ "./classes/inputClass/inputPressure.js");
-/* harmony import */ var _classes_spanClass_spanPressure__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../classes/spanClass/spanPressure */ "./classes/spanClass/spanPressure.js");
-/* harmony import */ var _classes_spanClass_spanDensity__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../classes/spanClass/spanDensity */ "./classes/spanClass/spanDensity.js");
-/* harmony import */ var _classes_inputClass_inputHeightPressure__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../classes/inputClass/inputHeightPressure */ "./classes/inputClass/inputHeightPressure.js");
-/* harmony import */ var _classes_spanClass_spanDensityAcc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../classes/spanClass/spanDensityAcc */ "./classes/spanClass/spanDensityAcc.js");
-/* harmony import */ var _classes_spanClass_spanAbsDensityAcc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../classes/spanClass/spanAbsDensityAcc */ "./classes/spanClass/spanAbsDensityAcc.js");
-/* harmony import */ var _classes_selectClass_selectTable__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../classes/selectClass/selectTable */ "./classes/selectClass/selectTable.js");
+/* harmony import */ var _classes_Selects_Level__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../classes/Selects/Level */ "./classes/Selects/Level.js");
+/* harmony import */ var _classes_Selects_Temperature__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../classes/Selects/Temperature */ "./classes/Selects/Temperature.js");
+/* harmony import */ var _classes_Selects_Pressure__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../classes/Selects/Pressure */ "./classes/Selects/Pressure.js");
+/* harmony import */ var _classes_Selects_Volume__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../classes/Selects/Volume */ "./classes/Selects/Volume.js");
+/* harmony import */ var _classes_inputClass_inputLevel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../classes/inputClass/inputLevel */ "./classes/inputClass/inputLevel.js");
+/* harmony import */ var _classes_spanClass_spanLevel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../classes/spanClass/spanLevel */ "./classes/spanClass/spanLevel.js");
+/* harmony import */ var _classes_inputClass_inputTemp__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../classes/inputClass/inputTemp */ "./classes/inputClass/inputTemp.js");
+/* harmony import */ var _classes_spanClass_spanTemp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../classes/spanClass/spanTemp */ "./classes/spanClass/spanTemp.js");
+/* harmony import */ var _classes_inputClass_inputPressure__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../classes/inputClass/inputPressure */ "./classes/inputClass/inputPressure.js");
+/* harmony import */ var _classes_spanClass_spanPressure__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../classes/spanClass/spanPressure */ "./classes/spanClass/spanPressure.js");
+/* harmony import */ var _classes_spanClass_spanDensity__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../classes/spanClass/spanDensity */ "./classes/spanClass/spanDensity.js");
+/* harmony import */ var _classes_inputClass_inputHeightPressure__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../classes/inputClass/inputHeightPressure */ "./classes/inputClass/inputHeightPressure.js");
+/* harmony import */ var _classes_spanClass_spanDensityAcc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../classes/spanClass/spanDensityAcc */ "./classes/spanClass/spanDensityAcc.js");
+/* harmony import */ var _classes_spanClass_spanAbsDensityAcc__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../classes/spanClass/spanAbsDensityAcc */ "./classes/spanClass/spanAbsDensityAcc.js");
 /* harmony import */ var _classes_inputClass_inputVolume__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../classes/inputClass/inputVolume */ "./classes/inputClass/inputVolume.js");
 /* harmony import */ var _classes_spanClass_spanVolume__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../classes/spanClass/spanVolume */ "./classes/spanClass/spanVolume.js");
 /* harmony import */ var _classes_spanClass_spanWeight__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../classes/spanClass/spanWeight */ "./classes/spanClass/spanWeight.js");
 /* harmony import */ var _classes_spanClass_spanWeightAcc__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../classes/spanClass/spanWeightAcc */ "./classes/spanClass/spanWeightAcc.js");
 /* harmony import */ var _modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../modules/animation/showHideAnimation */ "./modules/animation/showHideAnimation.js");
+/* harmony import */ var _classes_spanClass_SpanClass__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../classes/spanClass/SpanClass */ "./classes/spanClass/SpanClass.js");
+
+
 
 
 
@@ -798,7 +870,6 @@ function tempCalc() {
         resultTemp.textContent = 'Значение температуры не введено!'
         return
     }
-    total2 = resultTemp.textContent
 }
 
 tempCalc()
@@ -1021,11 +1092,21 @@ function getStaticInfo(selector) {
     })
 }
 
+fetch('http://localhost:3000/level')
+    .then(data => data.json())
+    .then(res => console.log(res))
+
+
+
+
+
+
 getDynamicInfo('#currentLevel')
 getDynamicInfo('#currentTemp')
 getDynamicInfo('#currentVolume')
 getDynamicInfo('#currentPressure')
 getDynamicInfo('#heightPressureTransmitter')
+
 getStaticInfo('#selectLevel')
 getStaticInfo('#selectTemp')
 getStaticInfo('#selectPressure')
@@ -1038,41 +1119,6 @@ getStaticInfo('#selectTableAcc')
 ;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.volume', '.volume .container', 'volume')
 ;(0,_modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__["default"])('.weight', '.weight .container', 'weight')
 
-
-// newElement.innerHTML = `
-//         <div class="container show">
-//             <div class="content">
-//                 <p>Выберите уровнемер</p>
-//             </div>
-//             <div class="content">
-//                 <select class="select" id="selectLevel" onchange="getStaticInfo('#selectLevel')">
-//                     <option selected value="Выберите уровнемер">Выберите уровнемер</option>
-//                     <option value="1">5900S</option>
-//                     <option value="2">5900С</option>
-//                     <option value="1">REX</option>
-//                     <option value="3">PRO</option>
-//                     <option value="3">5300</option>
-//                     <option value="3">5400</option>
-//                 </select>
-//             </div>
-//         </div>
-// `
-//
-// element.appendChild(newElement)
-// element.addEventListener('click', (e) => {
-//     const target = e.target
-//     if (target.classList.contains('level') || target.parentElement.classList.contains('title')) {
-//         if (newElement.classList.contains('hide'))
-//         {
-//             newElement.classList.add('show')
-//             newElement.style.cssText = 'height: 150px'
-//         } else {
-//             newElement.classList.remove('show')
-//             newElement.classList.add('hide')
-//             newElement.style.cssText = 'height: 50px'
-//         }
-//     }
-// })
 
 
 })();

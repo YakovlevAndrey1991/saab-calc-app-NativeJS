@@ -1,12 +1,14 @@
-import selectLevel from "../classes/selectClass/selectLevel";
+import levelSelectWindow from "../classes/Selects/Level";
+import tempSelectWindow from "../classes/Selects/Temperature";
+import pressureSelectWindow from "../classes/Selects/Pressure";
+import volumeSelectWindow from "../classes/Selects/Volume";
+
 import inputLevel from "../classes/inputClass/inputLevel";
 import spanLevel from "../classes/spanClass/spanLevel";
 
-import selectTemp from "../classes/selectClass/selectTemp";
 import inputTemp from "../classes/inputClass/inputTemp";
 import spanTemp from "../classes/spanClass/spanTemp";
 
-import selectPressure from "../classes/selectClass/selectPressure";
 import inputPressure from "../classes/inputClass/inputPressure";
 import spanPressure from "../classes/spanClass/spanPressure";
 import spanDensity from "../classes/spanClass/spanDensity";
@@ -15,7 +17,6 @@ import inputHeightPressure from "../classes/inputClass/inputHeightPressure";
 import spanDensityAcc from "../classes/spanClass/spanDensityAcc";
 import spanAbsDensityAcc from "../classes/spanClass/spanAbsDensityAcc";
 
-import selectTable from "../classes/selectClass/selectTable";
 import inputVolume from "../classes/inputClass/inputVolume";
 import spanVolume from "../classes/spanClass/spanVolume";
 
@@ -25,6 +26,7 @@ import spanWeightAcc from "../classes/spanClass/spanWeightAcc";
 
 
 import showHideAnimation from "../modules/animation/showHideAnimation";
+import SpanClass from "../classes/spanClass/SpanClass";
 
 const resultLevel = document.querySelector('.level span')
 const resultTemp = document.querySelector('.temperature span')
@@ -93,7 +95,6 @@ function tempCalc() {
         resultTemp.textContent = 'Значение температуры не введено!'
         return
     }
-    total2 = resultTemp.textContent
 }
 
 tempCalc()
@@ -316,11 +317,21 @@ function getStaticInfo(selector) {
     })
 }
 
+fetch('http://localhost:3000/level')
+    .then(data => data.json())
+    .then(res => console.log(res))
+
+
+
+
+
+
 getDynamicInfo('#currentLevel')
 getDynamicInfo('#currentTemp')
 getDynamicInfo('#currentVolume')
 getDynamicInfo('#currentPressure')
 getDynamicInfo('#heightPressureTransmitter')
+
 getStaticInfo('#selectLevel')
 getStaticInfo('#selectTemp')
 getStaticInfo('#selectPressure')
@@ -333,39 +344,4 @@ showHideAnimation('.wrapper__auto__dens', '.wrapper__auto__dens .container', 'wr
 showHideAnimation('.volume', '.volume .container', 'volume')
 showHideAnimation('.weight', '.weight .container', 'weight')
 
-
-// newElement.innerHTML = `
-//         <div class="container show">
-//             <div class="content">
-//                 <p>Выберите уровнемер</p>
-//             </div>
-//             <div class="content">
-//                 <select class="select" id="selectLevel" onchange="getStaticInfo('#selectLevel')">
-//                     <option selected value="Выберите уровнемер">Выберите уровнемер</option>
-//                     <option value="1">5900S</option>
-//                     <option value="2">5900С</option>
-//                     <option value="1">REX</option>
-//                     <option value="3">PRO</option>
-//                     <option value="3">5300</option>
-//                     <option value="3">5400</option>
-//                 </select>
-//             </div>
-//         </div>
-// `
-//
-// element.appendChild(newElement)
-// element.addEventListener('click', (e) => {
-//     const target = e.target
-//     if (target.classList.contains('level') || target.parentElement.classList.contains('title')) {
-//         if (newElement.classList.contains('hide'))
-//         {
-//             newElement.classList.add('show')
-//             newElement.style.cssText = 'height: 150px'
-//         } else {
-//             newElement.classList.remove('show')
-//             newElement.classList.add('hide')
-//             newElement.style.cssText = 'height: 50px'
-//         }
-//     }
-// })
 

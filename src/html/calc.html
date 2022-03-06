@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/calc.css">
+    <title>Калькулятор погрешности</title>
+</head>
+<body>
+<div class="main">
+
+
+
+    <header>
+        <h1>Калькулятор погрешности измерения массы для измерительных систем <br>Raptor, TRL/2, RTG</br>
+        </h1>
+        <h2>Производства Rosemount Tank Radar AB</h2>
+    </header>
+
+    <div class="level">
+        <div class="wrapper-level-title">
+            <div class="title">
+                <h>Уровень</h>
+            </div>
+        </div>
+        <div class="wrapper-level-content"></div>
+
+
+    </div>
+    <div class="temperature">
+        <div class="wrapper-temp-title">
+            <div class="title">
+                <h>Температура</h>
+            </div>
+        </div>
+        <div class="wrapper-temp-content">
+
+        </div>
+
+
+    </div>
+
+    <div class="chose__density_type">
+        <div class="wrapper-type-title">
+            <div class="title">
+                <h>Плотность</h>
+            </div>
+        </div>
+
+        <div class="wrapper-type-content">
+            <form class="form">
+                <div class="choose container show">
+                    <div class="hydro__pressure_transmitter">
+                        <p>Выберите тип измерения плотности</p>
+                        <label><input name="dens" type="radio" value="auto" id="auto">Автоматический</label>
+                        <label><input name="dens" type="radio" value="handle" id="handle">Лабораторный</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="wrapper__auto__dens">
+
+        <div class="wrapper-pressure-title">
+            <div class="title">
+                <h>Давление</h>
+            </div>
+        </div>
+        <div class="wrapper-pressure-content">
+            <form class="tempCorrection">
+                <div class="container show">
+                    <label><input class="input" type="checkbox" id="tempCorrection">Учесть
+                        доп.погрешность от температуры</label>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+    <div class="wrapper__handle__dens">
+        <div class="container">
+            <p>Плотность</p>
+            <input id="currentDensity" type="number" placeholder="Введите значение" class="input">
+        </div>
+
+        <div class="container">
+            <p>Абсолютная погрешность измерения плотности, %</p>
+            <div class="resultHandleDensity">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="volume">
+        <div class="wrapper-volume-title">
+            <div class="title">
+                <h>Объем</h>
+            </div>
+        </div>
+        <div class="wrapper-volume-content"></div>
+
+    </div>
+
+
+
+    <div class="weight">
+        <div class="wrapper-weight-title">
+            <div class="title">
+                <h>Масса</h>
+            </div>
+        </div>
+        <div class="wrapper-weight-content">
+        </div>
+
+
+    </div>
+
+</div>
+<script src="../../dist/bundle.js"></script>
+
+</body>
+</html>
