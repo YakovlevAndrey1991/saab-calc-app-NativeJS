@@ -12,6 +12,20 @@ header {
     background-repeat: no-repeat;
 }
 
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    text-wrap: none;
+    margin: 0 30px 0 0;
+}
+.logo a{
+    transition: .3s;
+}
+.logo a:hover {
+    color: #00D4C6;
+
+}
+
 .navigation {
     position: absolute;
     display: flex;
