@@ -6,8 +6,7 @@ body {
 }
 
 header {
-    height: 95vh;
-    background: linear-gradient(rgba(1, 3, 56, .8), rgba(1, 3, 56, .0));
+    /*background: linear-gradient(rgba(1, 3, 56, .8), rgba(1, 3, 56, .0));*/
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -48,6 +47,9 @@ header {
     font-size: 40px;
     font-family: "Fira Code";
 }
+.logo:hover {
+    cursor: default;
+}
 
 .link {
     transition: .3s;
@@ -62,6 +64,15 @@ header {
     left: 10%;
     width: 35%;
     position: absolute;
+}
+.img {
+    top: 35%;
+    left: 50%;
+    width: 35%;
+    position: absolute;
+}
+.img img {
+    border-radius: 30px;
 }
 
 .description h1 {
@@ -94,13 +105,13 @@ header {
 }
 
 footer {
+
     flex: 0 0 auto;
-    position: absolute;
     width: 100%;
-    height: 5vh;
     background: black;
     margin: 0 auto;
     text-align: center;
+    align-items: center;
     padding-top: 25px;
 
 }

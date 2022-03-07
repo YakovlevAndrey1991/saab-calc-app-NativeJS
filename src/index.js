@@ -22,11 +22,12 @@ import spanVolume from "../classes/spanClass/spanVolume";
 
 import spanWeight from "../classes/spanClass/spanWeight";
 import spanWeightAcc from "../classes/spanClass/spanWeightAcc";
-
-
-
 import showHideAnimation from "../modules/animation/showHideAnimation";
 import SpanClass from "../classes/spanClass/SpanClass";
+window.onload = function () {
+    let preloader = document.getElementById('preloader')
+    preloader.style.display = 'none';
+}
 
 const resultLevel = document.querySelector('.level span')
 const resultTemp = document.querySelector('.temperature span')
@@ -51,7 +52,7 @@ let total1, total2, h, p
 
 function levelCalc() {
 
-    if (levelTransmitter === 'Выберите уровнемер') {
+    if (!levelTransmitter) {
         resultLevel.textContent = 'Уровнемер не выбран'
         return
     }
@@ -78,7 +79,7 @@ levelCalc()
 
 function tempCalc() {
 
-    if (tempTransmitter === 'Выберите датчик') {
+    if (!tempTransmitter) {
         resultTemp.textContent = 'Датчик не выбран'
         return
     }
@@ -101,7 +102,7 @@ tempCalc()
 
 function pressureCalc() {
 
-    if (pressureTransmitter === '0') {
+    if (!pressureTransmitter) {
         resultPressure.textContent = 'Датчик давления не выбран'
         return
     }
@@ -190,7 +191,7 @@ function absDensityAcc() {
 }
 
 function volumeAccCalc() {
-    if (tableAcc === 'Выберите значение') {
+    if (!tableAcc) {
         resultVolumeAcc.textContent = 'Погрешность таблицы не выбрана'
         return
     }
@@ -276,6 +277,7 @@ function getDynamicInfo(selector) {
                 densAutoCalc()
                 densityAccCalc()
                 absDensityAcc()
+                weightCalc()
                 break
             case 'currentVolume':
                 volume = +input.value
@@ -295,6 +297,7 @@ function getDynamicInfo(selector) {
 function getStaticInfo(selector) {
     const transmitter = document.querySelector(selector)
 
+
     transmitter.addEventListener('change', () => {
         switch (transmitter.getAttribute('id')) {
             case 'selectLevel':
@@ -311,15 +314,14 @@ function getStaticInfo(selector) {
                 break
             case 'selectTableAcc':
                 tableAcc = transmitter.value
+                volumeAccCalc()
                 break
 
         }
     })
 }
 
-fetch('http://localhost:3000/level')
-    .then(data => data.json())
-    .then(res => console.log(res))
+
 
 
 

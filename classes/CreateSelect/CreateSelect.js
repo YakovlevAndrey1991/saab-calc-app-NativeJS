@@ -8,7 +8,7 @@ class CreateSelect {
         const select = document.createElement('select')
         select.classList.add('select')
         select.id = this.id
-        select.innerHTML = `<option value="Выберите датчик">Выберите датчик</option>`
+        // select.innerHTML = `<option value="Выберите уровнемер">Выберите датчик</option>`
         this.parent.append(select)
     }
 }

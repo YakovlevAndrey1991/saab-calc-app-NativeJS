@@ -7,7 +7,7 @@ const getResource = async (url, parentID) => {
     }
     return await res.json()
         .then(data => {
-            console.log(data)
+            // console.log(data)
             data.forEach(({title, value}) => {
                 new AddOption(title, value, parentID).render()
             })

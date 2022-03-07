@@ -20,11 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8653cd28-f0cd-4da0-bec5-ac8828de5fe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/img/free-icon-js-5968292.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/github.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/hh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/raptor.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/tlg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/tlg2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/CreateSelect/CreateSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/classes/CreateSelect/CreateSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/level/levelCalc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/practice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/calc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/about.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/calc.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/calc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilites/getResource.js" beforeDir="false" afterPath="$PROJECT_DIR$/utilites/getResource.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +84,8 @@
       <workItem from="1645942083430" duration="16987000" />
       <workItem from="1646125573390" duration="13567000" />
       <workItem from="1646290555769" duration="5273000" />
-      <workItem from="1646588173241" duration="1944000" />
+      <workItem from="1646588173241" duration="2606000" />
+      <workItem from="1646639002360" duration="8691000" />
     </task>
     <servers />
   </component>
