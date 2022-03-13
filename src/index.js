@@ -24,6 +24,7 @@ import spanWeight from "../classes/spanClass/spanWeight";
 import spanWeightAcc from "../classes/spanClass/spanWeightAcc";
 import showHideAnimation from "../modules/animation/showHideAnimation";
 import SpanClass from "../classes/spanClass/SpanClass";
+
 window.onload = function () {
     let preloader = document.getElementById('preloader')
     preloader.style.display = 'none';
@@ -196,13 +197,13 @@ function volumeAccCalc() {
         return
     }
     if (tableAcc === '0.05') {
-        resultVolumeAcc.textContent = (0.05 * volume).toFixed(4)
+        resultVolumeAcc.textContent = ((0.05 * 100) / volume).toFixed(4)
     }
     if (tableAcc === '0.1') {
-        resultVolumeAcc.textContent = (0.1 * volume).toFixed(4)
+        resultVolumeAcc.textContent = ((0.1 * 100) / volume).toFixed(4)
     }
     if (tableAcc === '0.2') {
-        resultVolumeAcc.textContent = (0.2 * volume).toFixed(4)
+        resultVolumeAcc.textContent = ((0.2 * 100) / volume).toFixed(4)
     }
     if (!volume) {
         resultVolumeAcc.textContent = 'Объем не введен'
@@ -230,7 +231,6 @@ function getChecked() {
 }
 
 getChecked()
-
 
 function getRadioChecked() {
     const choose = document.querySelector('.form')
@@ -297,7 +297,6 @@ function getDynamicInfo(selector) {
 function getStaticInfo(selector) {
     const transmitter = document.querySelector(selector)
 
-
     transmitter.addEventListener('change', () => {
         switch (transmitter.getAttribute('id')) {
             case 'selectLevel':
@@ -320,12 +319,6 @@ function getStaticInfo(selector) {
         }
     })
 }
-
-
-
-
-
-
 
 
 getDynamicInfo('#currentLevel')

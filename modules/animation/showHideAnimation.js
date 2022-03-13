@@ -28,7 +28,7 @@ export default function showHideAnimation(parentElementSelector, contentSelector
     element.addEventListener('click', (e) => {
 
         const target = e.target
-        if (target.parentElement.classList.contains('title')) {
+        if (target.parentElement.classList.contains('title') || target.classList.contains('title')) {
             content.forEach(elem => {
                 if (elem.classList.contains('hide')){
                     elem.classList.remove('hide')

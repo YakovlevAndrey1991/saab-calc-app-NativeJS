@@ -642,7 +642,7 @@ function showHideAnimation(parentElementSelector, contentSelector) {
     element.addEventListener('click', (e) => {
 
         const target = e.target
-        if (target.parentElement.classList.contains('title')) {
+        if (target.parentElement.classList.contains('title') || target.classList.contains('title')) {
             content.forEach(elem => {
                 if (elem.classList.contains('hide')){
                     elem.classList.remove('hide')
@@ -773,6 +773,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _classes_spanClass_spanWeightAcc__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../classes/spanClass/spanWeightAcc */ "./classes/spanClass/spanWeightAcc.js");
 /* harmony import */ var _modules_animation_showHideAnimation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../modules/animation/showHideAnimation */ "./modules/animation/showHideAnimation.js");
 /* harmony import */ var _classes_spanClass_SpanClass__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../classes/spanClass/SpanClass */ "./classes/spanClass/SpanClass.js");
+
 
 
 
@@ -971,13 +972,13 @@ function volumeAccCalc() {
         return
     }
     if (tableAcc === '0.05') {
-        resultVolumeAcc.textContent = (0.05 * volume).toFixed(4)
+        resultVolumeAcc.textContent = ((0.05 * 100) / volume).toFixed(4)
     }
     if (tableAcc === '0.1') {
-        resultVolumeAcc.textContent = (0.1 * volume).toFixed(4)
+        resultVolumeAcc.textContent = ((0.1 * 100) / volume).toFixed(4)
     }
     if (tableAcc === '0.2') {
-        resultVolumeAcc.textContent = (0.2 * volume).toFixed(4)
+        resultVolumeAcc.textContent = ((0.2 * 100) / volume).toFixed(4)
     }
     if (!volume) {
         resultVolumeAcc.textContent = 'Объем не введен'
@@ -1005,7 +1006,6 @@ function getChecked() {
 }
 
 getChecked()
-
 
 function getRadioChecked() {
     const choose = document.querySelector('.form')
@@ -1072,7 +1072,6 @@ function getDynamicInfo(selector) {
 function getStaticInfo(selector) {
     const transmitter = document.querySelector(selector)
 
-
     transmitter.addEventListener('change', () => {
         switch (transmitter.getAttribute('id')) {
             case 'selectLevel':
@@ -1095,12 +1094,6 @@ function getStaticInfo(selector) {
         }
     })
 }
-
-
-
-
-
-
 
 
 getDynamicInfo('#currentLevel')
